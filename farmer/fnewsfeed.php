@@ -3,13 +3,18 @@ include ('fsession.php');
 ini_set('memory_limit', '-1');
 
 if(!isset($_SESSION['farmer_login_user'])){
-header("location: ../index.php");} // Redirecting To Home Page
+    header("location: ../index.php"); // Redirecting To Home Page
+}
+
 $query4 = "SELECT * from farmerlogin where email='$user_check'";
-              $ses_sq4 = mysqli_query($conn, $query4);
-              $row4 = mysqli_fetch_assoc($ses_sq4);
-              $para1 = $row4['farmer_id'];
-              $para2 = $row4['farmer_name'];
-			  
+$ses_sq4 = mysqli_query($conn, $query4);
+$row4 = mysqli_fetch_assoc($ses_sq4);
+$para1 = $row4['farmer_id'];
+$para2 = $row4['farmer_name'];
+
+// Define the API key
+$apiKey = "d9b8418b1c6a47f7b4019e00379780b9";
+
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +25,8 @@ $query4 = "SELECT * from farmerlogin where email='$user_check'";
   
  <script>
   window.addEventListener("load", function() {
-    const endpoint = "https://newsapi.org/v2/everything?q=farmers&sortBy=popularity&apiKey=e13c1810209a4e6ca7997d39b797152c";
+    const apiKey = "d9b8418b1c6a47f7b4019e00379780b9";  // Store API key in a variable
+    const endpoint = `https://newsapi.org/v2/everything?q=farmers&sortBy=popularity&apiKey=${apiKey}`;
     fetch(endpoint)
     .then(response => {
       if (!response.ok) {
@@ -90,32 +96,33 @@ $query4 = "SELECT * from farmerlogin where email='$user_check'";
 
 
     <?php
-	error_reporting(E_ERROR | E_PARSE);
+    error_reporting(E_ERROR | E_PARSE);
 
-	       // https://newsapi.org/v2/everything?q=Agriculture&sortBy=popularity&apiKey=e13c1810209a4e6ca7997d39b797152c
-	
-        $url="https://newsapi.org/v2/everything?q=farmers&sortBy=popularity&apiKey=e13c1810209a4e6ca7997d39b797152c";   //Your API KEY
-		
-        $response=file_get_contents($url);
-        $newsdata= json_decode($response);
+    // Using the API key variable in the URL
+    $url = "https://newsapi.org/v2/everything?q=farmers&sortBy=popularity&apiKey=$apiKey";  // Use the variable here
+    
+    $response = file_get_contents($url);
+    $newsdata = json_decode($response);
     ?>
-        <?php
-            foreach($newsdata->articles as $news)
-            {
-        ?>
-				 <tr class="text-center">
-							 <td> <img class="img img-thumbnail " src="<?php echo $news->urlToImage ?>" alt="News thumbnail" width="100px"> </td>
-							 <td class="text-wrap text-justify"> <?php echo $news->title ?> </td>						 
-							 <td class="text-wrap text-justify"> <?php echo $news->author  ?> </td>
-							 <td class=" text-justify"> <?php echo $news->publishedAt  ?> </td>		
-<td>  <button class="btn btn-sm btn-info" > <a  href=<?php echo $news->url ?> class=" nav-link text-white" target="_blank">Visit</a> </button></td>
-
-							</tr>
-							
-						
-        <?php
-             }
-        ?>   
+    
+    <?php
+        foreach($newsdata->articles as $news)
+        {
+    ?>
+        <tr class="text-center">
+            <td> <img class="img img-thumbnail " src="<?php echo $news->urlToImage ?>" alt="News thumbnail" width="100px"> </td>
+            <td class="text-wrap text-justify"> <?php echo $news->title ?> </td>						 
+            <td class="text-wrap text-justify"> <?php echo $news->author  ?> </td>
+            <td class=" text-justify"> <?php echo $news->publishedAt  ?> </td>		
+            <td>  
+                <button class="btn btn-sm btn-info"> 
+                    <a href="<?php echo $news->url ?>" class="nav-link text-white" target="_blank">Visit</a> 
+                </button>
+            </td>
+        </tr>
+    <?php
+        }
+    ?>   
     </tbody>
 </table>
 

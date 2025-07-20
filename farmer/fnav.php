@@ -14,7 +14,7 @@
         <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
           <li class="nav-item dropdown">
             <a href="../index.php" class="navbar-brand mr-lg-5 text-white">
-                               <img src="../assets/img/nav.png" />
+                               <img src="../assets/img/test.png" />
             </a>
           </li>
         </ul>
@@ -35,7 +35,7 @@
             <div class="row">
               <div class="col-10 collapse-brand">
                 <a href="../index.html">
-                  <img src="../assets/img/nav.png" />
+                  <img src="../assets/img/test.png" />
                 </a>
               </div>
               <div class="col-2 collapse-close bg-danger">

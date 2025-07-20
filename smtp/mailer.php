@@ -14,12 +14,12 @@ function smtp_mailer($to,$subject, $msg){
 	$mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
 	$mail->SMTPAuth = true; // authentication enabled
 	$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
-	$mail->Host = "mail.aurumcommunications.com";
+	$mail->Host = "smtp.gmail.com";
 	$mail->Port = 465; // or 587
 	$mail->IsHTML(true);
-	$mail->Username = "generalsmtp@aurumcommunications.com";
-	$mail->Password = "parag12";
-	$mail->SetFrom("enquiry@marchingants.net");
+	$mail->Username = "atharvsuranje2604@gmail.com";
+	$mail->Password = "vtbkxtqldyrmbiqu";
+	$mail->SetFrom("atharvsuranje2604@gmail.com");
 	$mail->Subject = $subject;
 	$mail->Body =$msg;
 	$mail->AddAddress($to);

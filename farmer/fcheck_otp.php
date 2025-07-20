@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$con=mysqli_connect('localhost','root','','agriculture_portal');
+$con=mysqli_connect('localhost','root','Atharv@2604','agriculture_portal');
 $otp=$_POST['otp'];
 $email=$_SESSION['farmer_login_user'];
 $res=mysqli_query($con,"select * from farmerlogin where email='$email' and otp='$otp'");

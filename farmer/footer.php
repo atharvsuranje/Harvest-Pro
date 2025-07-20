@@ -7,8 +7,8 @@
                 <div class="offset-sm-2 col-5 ">
                     <h5>Our Address</h5>
                     <address>
-		              Vishwothama Nagar, Bantakal<br>
-		              Udupi - 574 115, Karnataka<br>		              
+		              Shivajinagar<br>
+		              Pune - 411005<br>		              
 		              <div class="btn-group text-center" role="group">
                     <a role="button" class="btn btn-primary" href="tel:+919448936339"><i class="fa fa-phone"></i> Call</a>
                     <a role="button" class="btn btn-info" href="tel:+918233294006"> <i class="fa fa-fax"></i> Fax</a>
@@ -42,7 +42,7 @@
 		   <hr>
            <div class="row justify-content-center">             
                      <div class="col-auto">					
-                    <p>&copy; Copyright 2023 AGRICULTURE PORTAL, All Rights Reserved </p>
+                    <p>&copy; Copyright 2025 HarvestPro, All Rights Reserved </p>
                 </div>
            </div>
         </div>

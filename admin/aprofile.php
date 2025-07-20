@@ -71,7 +71,7 @@ $query4 = "SELECT * from admin where admin_name ='$user'";
 				
                   <ol class="text-justify list-group list-group-flush">
                
-                <li class="list-group-item">Admin has access to all the data in the Agriculture Portal.</li>
+                <li class="list-group-item">Admin has access to all the data in the HarvestPro.</li>
 				<li class="list-group-item">Admin can modify and view all the Customer's details when necessory.</li>
 				<li class="list-group-item">Admin can manage the farmer's details who provide supplies to the store.</li>
                <li class="list-group-item"> Admin also has access to the sales report and can sort them as required.</li>

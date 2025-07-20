@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" type="image/png" href="assets/img/logo.png" />
-    <title>Agriculture Portal</title>
+    <title>HarvestPro</title>
 
   <!--     Fonts and icons     -->
   
@@ -46,7 +46,8 @@
         <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
           <li class="nav-item dropdown">
             <a href="index.php" class="navbar-brand mr-lg-5 text-white">
-                               <img src="assets/img/nav.png" />
+              
+                               <img src="assets/img/test.png" />
             </a>
           </li>
         </ul>
@@ -67,7 +68,7 @@
             <div class="row">
               <div class="col-10 collapse-brand">
                 <a href="index.html">
-                  <img src="assets/img/nav.png" />
+                  <img src="assets/img/test.png" />
                 </a>
               </div>
               <div class="col-2 collapse-close bg-danger">
@@ -144,9 +145,9 @@
         <div class="container">
           <div class="row row-header">
             <div class="col-12 col-sm-6">
-              <h1 class="text-white">Agriculture Portal</h1>
+              <h1 class="text-white">HarvestPro</h1>
               <p class="text-white">
-               A True Farmer's Friend.
+               A Farmer's True Friend.
               </p>
               <div class="cg">
                 <div class="card card-body bg-gradient-success">
@@ -400,7 +401,7 @@
 
 <script>
 
-const apiKey = "sk-xxxxxxxxxxxxxxxxxxx";   // Enter your apikey here
+const apiKey = "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";   // Enter your apikey here
 const chatbox = document.getElementById("quote");
 const authorN = document.getElementById("author");
 

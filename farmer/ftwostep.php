@@ -4,7 +4,13 @@ require('../sql.php'); // Includes Login Script
 
 // Storing Session
 $user = $_SESSION['farmer_login_user'];
-
+if (!$user) {
+    header("Location: flogin.php"); // Redirect to login if session is not set
+    exit();
+} else {
+    header("Location: fprofile.php"); // Redirect directly to profile
+    exit();
+}
 ?>
 
 
@@ -14,7 +20,7 @@ $user = $_SESSION['farmer_login_user'];
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" type="image/png" href="../assets/img/logo.png" />
-    <title>Agriculture Portal</title>
+    <title>HarvestPro</title>
 
   <!--     Fonts and icons     -->
   
@@ -35,10 +41,55 @@ $user = $_SESSION['farmer_login_user'];
 
  
   <link rel="stylesheet" href="../assets/css/creativetim.min.css" type="text/css">
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- <script>
+    $(document).ready(function() {
+      // Send OTP when the page loads
+      send_otp();
+    });
 
+    function send_otp() {
+      $.ajax({
+        url: "fsend_otp.php", // The page containing PHP script
+        type: "POST", // Request type
+        success: function(result) {
+          $("#popup").css({'display': 'block'});
+          $("#popup").fadeTo(2000, 500).slideUp(500, function() {
+            $("#popup").slideUp(500);
+          });
+        },
+        error: function(xhr, status, error) {
+          console.error("Error sending OTP: " + error);
+        }
+      });
+    }
+
+    function submit_otp() {
+      var otp = $('#otp').val();
+      $.ajax({
+        url: 'fcheck_otp.php',
+        type: 'POST',
+        data: { otp: otp }, // Send data as an object
+        success: function(result) {
+          if (result == 'yes') {
+            window.location = 'fprofile.php';
+          } else if (result == 'not_exist') {
+            $("#invalid").css({'display': 'block'});
+            $("#invalid").fadeTo(2000, 500).slideUp(500, function() {
+              $("#invalid").slideUp(500);
+            });
+          }
+        },
+        error: function(xhr, status, error) {
+          console.error("Error submitting OTP: " + error);
+        }
+      });
+    }
+  </script> -->
 </head>
 
-  <body class="bg-white" id="top" onload="send_otp();" >
+  <body class="bg-white" id="top" >
     <!-- Navbar -->
     <nav
       id="navbar-main"
@@ -56,7 +107,7 @@ $user = $_SESSION['farmer_login_user'];
         <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
           <li class="nav-item dropdown">
             <a href="../index.php" class="navbar-brand mr-lg-5 text-white">
-                               <img src="../assets/img/nav.png" />
+                               <img src="../assets/img/test.png" />
             </a>
           </li>
         </ul>
@@ -77,7 +128,7 @@ $user = $_SESSION['farmer_login_user'];
             <div class="row">
               <div class="col-10 collapse-brand">
                 <a href="../index.html">
-                  <img src="../assets/img/nav.png" />
+                  <img src="../assets/img/test.png" />
                 </a>
               </div>
               <div class="col-2 collapse-close bg-danger">
@@ -186,7 +237,7 @@ $user = $_SESSION['farmer_login_user'];
  
  
  
-<form method=""  action="">
+<!-- <form method=""  action="">
 					
 					<div class="alert alert-success alert-dismissible fade show text-center" style="display: none;" id="popup" role="alert">
 			<strong class="text-center text-dark ">OTP Sent Successfully</strong>
@@ -233,7 +284,7 @@ $user = $_SESSION['farmer_login_user'];
                     </div>
 					</div>
 					
-             </form>
+             </form> -->
 				
            </div>
        </div> 
@@ -252,43 +303,4 @@ $user = $_SESSION['farmer_login_user'];
 	    <?php require("footer.php");?>
 
 </body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<script>
-
- function send_otp () {
-      $.ajax({
-        url:"fsend_otp.php", //the page containing php script
-        type: "POST", //request type
-        success:function(result){
-			 $("#popup").css({'display':'block'}); 
-			 $("#popup").fadeTo(2000, 500).slideUp(500, function(){
-			$("#popup").slideUp(500);
-});
-       }
-     });
- }
-
-
-function submit_otp(){
-	var otp=jQuery('#otp').val();
-	jQuery.ajax({
-		url:'fcheck_otp.php',
-		type:'post',
-		data:'otp='+otp,
-		success:function(result){
-			if(result=='yes'){
-				window.location='fprofile.php';
-			}
-			if(result=='not_exist'){
-				$("#invalid").css({'display':'block'});
-				$("#invalid").fadeTo(2000, 500).slideUp(500, function(){
-			$("#invalid").slideUp(500);
-});
-			}
-		}
-	});
-}
-</script>
-
 </html>

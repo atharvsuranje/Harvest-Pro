@@ -8,7 +8,7 @@ $count=mysqli_num_rows($res);
 if($count>0){
     $otp=rand(11111,99999);
     mysqli_query($conn,"update custlogin set otp='$otp' where email ='$email'");
-	$html="Your otp verification code for Agriculture Portal is ".$otp;
+	$html="Your otp verification code for HarvestPro is ".$otp;
 	$_SESSION['farmer_login_user'];
     smtp_mailer($email,'OTP Verification',$html); 
     echo "yes";
@@ -28,9 +28,9 @@ function smtp_mailer($to,$subject, $msg){
 	$mail->Port = 465; 
 	$mail->IsHTML(true);
 	$mail->CharSet = 'UTF-8';
-	$mail->Username = "agricultureportal01@gmail.com";   
-    $mail->Password = "password"; 	
-    $mail->SetFrom("agricultureportal01@gmail.com");  
+	$mail->Username = "atharvsuranje2604@gmail.com";   
+    $mail->Password = "vtbkxtqldyrmbiqu"; 	
+    $mail->SetFrom("atharvsuranje2604@gmail.com");  
 	$mail->Subject = $subject;
 	$mail->Body =$msg;
 	$mail->AddAddress($to);

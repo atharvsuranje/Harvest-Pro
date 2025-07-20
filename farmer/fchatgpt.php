@@ -128,7 +128,7 @@ function clearContent(){
 }
 	
 const url = new URL(window.location.href);
-const apiKey = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxx";   // Enter your apikey here
+const apiKey = "AIzaSyBVCI4rf5XYnIdikNuDMA0c8PZ0w6hW5Ks";   // Enter your apikey here
 const chatbox = $("#chatbox");
 const userInput = $("#userInput");
 const sendButton = $("#sendButton");
@@ -136,20 +136,21 @@ let messages = [];
 
 sendButton.on("click", () => {
     const message = userInput.val();
-    if (message) {
-        messages.push({
-            "role": "user",
-            "content": message
-        });
-		const displaytext = window.markdownit().render(message);
-		let userMessageHtml = '<pre><div class="message right-side "  >' + displaytext + '</div></pre>';
-		chatbox.append(userMessageHtml);
-		chatbox.animate({ scrollTop: 20000000 }, "slow");
-        userInput.val("");
-        sendButton.val("Generating Response...");
-		sendButton.prop("disabled", true);
-        fetchMessages();
-    }
+    // if (message) {
+    //     messages.push({
+    //         "role": "user",
+    //         "content": message
+    //     });
+	// 	const displaytext = window.markdownit().render(message);
+	// 	let userMessageHtml = '<pre><div class="message right-side "  >' + displaytext + '</div></pre>';
+	// 	chatbox.append(userMessageHtml);
+	// 	chatbox.animate({ scrollTop: 20000000 }, "slow");
+    //     userInput.val("");
+    //     sendButton.val("Generating Response...");
+	// 	sendButton.prop("disabled", true);
+    //     testMessages();
+    // }
+    testMessages();
 });
 
 
@@ -175,7 +176,7 @@ userInput.on("keydown", (event) => {
 
 function fetchMessages() {
         var settings = {
-            url: "https://api.openai.com/v1/chat/completions",
+            url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
             method: "POST",
             timeout: 0,
             headers: {
@@ -229,7 +230,28 @@ function fetchMessages() {
 			chatbox.animate({ scrollTop: 20000000 }, "slow");
 		});
     }
+function testMessages(){
+    fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyBVCI4rf5XYnIdikNuDMA0c8PZ0w6hW5Ks",{
+        method : "POST",
+        header : {
+            "Content-Type" : "application/json",
+        },
+        body :{
+            contents: [{
+                parts: [{
+                    text:"Explain agriculture?"
+                }]
+            }]
+        }
+
+    })
+    .then(response=>response.json())
+    .then(data=>console.log("Doneeee :: ",data))
+    .catch(error=>console.log("ERROR :: ",error))
+}
+
  </script>
   
+
 </body>
 </html>

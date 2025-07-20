@@ -10,7 +10,7 @@ require_once("../sql.php");
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" type="image/png" href="../assets/img/logo.png" />
-    <title>Agriculture Portal</title>
+    <title>HarvestPro</title>
 
   <!--     Fonts and icons     -->
   
@@ -66,7 +66,7 @@ function getdistrict(val) {
         <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
           <li class="nav-item dropdown">
             <a href="../index.php" class="navbar-brand mr-lg-5 text-white">
-                               <img src="../assets/img/nav.png" />
+                               <img src="../assets/img/test.png" />
             </a>
           </li>
         </ul>
@@ -87,7 +87,7 @@ function getdistrict(val) {
             <div class="row">
               <div class="col-10 collapse-brand">
                 <a href="../index.html">
-                  <img src="../assets/img/nav.png" />
+                  <img src="../assets/img/test.png" />
                 </a>
               </div>
               <div class="col-2 collapse-close bg-danger">
@@ -365,8 +365,8 @@ function getdistrict(val) {
                 <div class="offset-sm-2 col-5 ">
                     <h5>Our Address</h5>
                     <address>
-		              Vishwothama Nagar, Bantakal<br>
-		              Udupi - 574 115, Karnataka<br>		              
+		              Shivajinagar<br>
+		              Pune - 411005<br>		              
 		              <div class="btn-group text-center" role="group">
                     <a role="button" class="btn btn-primary" href="tel:+919448936339"><i class="fa fa-phone"></i> Call</a>
                     <a role="button" class="btn btn-info" href="tel:+918233294006"> <i class="fa fa-fax"></i> Fax</a>
@@ -400,7 +400,7 @@ function getdistrict(val) {
 		   <hr>
            <div class="row justify-content-center">             
                      <div class="col-auto">					
-                    <p>&copy; Copyright 2023 AGRICULTURE PORTAL, All Rights Reserved </p>
+                    <p>&copy; Copyright 2025 HarvestPro, All Rights Reserved </p>
                 </div>
            </div>
         </div>

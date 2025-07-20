@@ -10,7 +10,7 @@ include('floginScript.php'); // Includes Login Script
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" type="image/png" href="../assets/img/logo.png" />
-    <title>Agriculture Portal</title>
+    <title>HarvestPro</title>
 
   <!--     Fonts and icons     -->
   
@@ -52,7 +52,7 @@ include('floginScript.php'); // Includes Login Script
         <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
           <li class="nav-item dropdown">
             <a href="../index.php" class="navbar-brand mr-lg-5 text-white">
-                               <img src="../assets/img/nav.png" />
+                               <img src="../assets/img/test.png" />
             </a>
           </li>
         </ul>
@@ -73,7 +73,7 @@ include('floginScript.php'); // Includes Login Script
             <div class="row">
               <div class="col-10 collapse-brand">
                 <a href="../index.html">
-                  <img src="../assets/img/nav.png" />
+                  <img src="../assets/img/test.png" />
                 </a>
               </div>
               <div class="col-2 collapse-close bg-danger">
